@@ -1,0 +1,29 @@
+# #################################################################
+# NAME: neo4j-sudo
+#
+# DESC: SUDO commands for Neo4j,
+#       add file to /etc/sudoers.d for sudo version 1.7 and higher.
+#       Ensure line "#includedir /etc/sudoers.d" exists in /etc/sudoers file.
+#
+# $HeadURL$
+# $LastChangedBy$
+# $LastChangedDate$
+# $LastChangedRevision$
+#
+# LOG
+# yyyy/mm/dd [user]: [notes]
+# 2014/02/04 cgwong: [v1.0.0] Creation
+# 2014/03/10 cgwong: [v1.1.0] Updated to UNIX format, updated comments
+# #################################################################
+
+###### Begin Neo4j specifications ######
+
+## Runas aliases specification ##
+
+# Neo4j accounts
+Runas_Alias NEO4J_OWNERS = neo4j
+
+# Neo4j access
+%neo4jadmin-l ALL = (NEO4J_OWNERS) ALL
+
+###### End Neo4j specifications ######
